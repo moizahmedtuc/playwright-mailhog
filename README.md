@@ -25,7 +25,7 @@ Use the provided docker-compose.yml to start MailHog locally:
 docker-compose up -d
 ```
 
-Web UI: http://localhost:8025\
+Web UI: http://localhost:8025 \
 SMTP: http://localhost:1025
 
 
