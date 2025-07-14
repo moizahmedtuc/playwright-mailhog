@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+    mailhog:
+        container_name: e2e_mailhog
+        image: mailhog/mailhog:v1.0.1
+        ports:
+            - "8025:8025" # Web UI
+            - "1025:1025" # SMTP
+        environment:
+            MH_STORAGE: maildir
+            MH_MAILDIR_PATH: chmod 1777 /tmp
+        command: -invite-jim=1 -jim-accept=0.50
+        entrypoint: ["/bin/sh", "-c", "MailHog &>/dev/null"]
+        restart: unless-stopped
